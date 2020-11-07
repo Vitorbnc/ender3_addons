@@ -1,0 +1,59 @@
+Configuração para o LaserWeb 4.0.996
+** Use com cautela, ou a ferramenta da fresa vai forçar a mesa da impressora
+Testada com a ferramenta cnc
+
+Lembre-se de desativar o "burn white" ao gerar o desenho para usar G0 (enquanto o laser está desligado) e G1 (enquanto ligado)
+
+-Configure a área da impressora para 220x220mm
+
+-Generator: default
+
+-Start
+
+G21         ; Set units to mm
+G90         ; Absolute positioning
+M107       ;Laser off 
+G1 F1800
+G1 Z50  ;Move head up before homing
+G28 X Y  ; Home
+G1 Y185
+G28 Z ;home z
+G0 Z50
+G0 X60 Y29
+G92 X0 Y0 Z8.3; Set position zero
+M106 S127 ; half speed
+
+
+-End
+
+M107          ; Switch tool off 
+M84 ; Disable steppers
+
+
+-Homing
+M107 ; tool off
+G1 F1800
+G1 Z50 ;Move head up before homing
+G28 X Y  ; Home
+G1 Y190
+G28 Z
+M84 ; disable motors
+
+
+-Tool ON
+
+G1 2000
+G1 Z1
+
+
+-Tool OFF
+
+G0 F2000
+G1 Z0
+
+
+-Laser Intensity
+
+S
+
+-Tool test duration: 0

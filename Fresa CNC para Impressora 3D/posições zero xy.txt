@@ -1,0 +1,8 @@
+Broca:
+X
+81.8 (LONGE)
+82.3 (Testar)
+Y
+32.8 (LONGE)
+32.3 (testar) (na verdade, era: 32.2)
+33.3 (não testado)

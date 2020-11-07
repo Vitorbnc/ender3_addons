@@ -1,0 +1,45 @@
+Escolha o diâmetro da ponta com 0.3mm a menos
+Coloque para iniciar a plotagem a uma altura de 14mm
+
+
+GCODE START --------------------
+
+G21         ; Set units to mm
+G90         ; Absolute positioning
+M107       ;Laser off 
+G1 F1800
+G1 Z25  ;Move head up before homing
+G28 X Y  ; Home
+;G1 Y190
+G28 Z ;home z
+G0 Z25
+G0 X52 Y49 ; Pen plotter zero position
+G92 X0 Y0; Set position zero for X Y
+
+;G1 Z9 F300;Set laser height
+;G0 X49 Y28  ;Laser - Move to base edge
+
+GCODE END ------------------------
+
+M107          ; Switch tool off 
+M84 ; Disable steppers
+
+GCODE HOMING -----------
+
+M107 ; tool off
+G1 F1800
+G1 Z25 ;Move head up before homing
+G28 X Y  ; Home
+G28 Z
+M84 ; disable motors
+
+
+TOOL ON -------------
+G1 F1200
+G1 Z12.4
+;M106
+
+TOOL OFF ---------
+G0 F1800
+G1 Z13.5
+;M107

@@ -1,0 +1,30 @@
+*Nota: Estas instruções foram testadas com o módulo de fresa para a ender 3 feito por mim, mas devem servir para uso geral.
+
+Placa:
+ALTERNATIVA 1:
+Coloque a placa sobre um suporte de madeira sobre a mesa da impressora 3d. Use fita dupla face para grudar a placa na madeira.
+Verifique se a broca e a furadeira (fresa) estão bem alinhadas, exatamente na vertical, verifique furando uma placa qualquer (já com o código)
+Use broca 0.8mm
+Posicione a fresa no ponto(0,0) (origem) desejado para os furos (isto é, a origem que você definiu ou definirá no KiCad), com a altura bem próxima da placa 
+já fixada com fita dupla face, mas alto o suficiente pra que a fresa se desloque sem arranhar a placa.
+
+ALTERNATIVA 2:
+Coloque a placa sobre a mesa de impressão sem fita,mas com uma folha de papel cartão de 1mm por baixo e prenda os lados com grampos. O resto é igual.
+
+
+1.No KiCad, crie um eixo de origem auxiliar, marcando o ponto de origem desejado no desenho da PCB.
+Obs.: O eixo auxiliar pode ser qualquer coisa(vértice, via, letra,etc.), desde que seja pequena pra facilitar o alinhamento
+2.Vá em Generate Drill File na seção de Plot, use o eixo auxiliar e gere um excellon
+3.Abra o excellon no FlatCam
+4.No FlatCam:
+-Verifique se não há furos adicionais longe demais. Edite (botão direito, editar) o excellon para que os furos não sejam largos demais (deixei todos 0.8mm)
+-Carregue a configuração mais nova desta pasta, certifique-se que o tamanho da ferramenta é mesmo 0.8mm
+-Selecione o excellon e gere o g-code.
+-Exporte o g-code para um arquivo.
+5.Faça as substituições (M3->M106 e M5->M107) ou (acho melhor):
+- Deixe M106 como prepend G-Code
+- M107 e M84 como append G-code
+
+6.Se você gerou g-code com preprocessor Marlin (bom para furar mais rápido), 
+arraste o g-code sobre o "Marlin Excellon Fix F100.EXE" para gerar um g-code corrigido, com velocidade F100 para furos
+
