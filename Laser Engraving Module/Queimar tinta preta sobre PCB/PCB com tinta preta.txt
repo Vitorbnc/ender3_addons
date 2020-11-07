@@ -1,0 +1,6 @@
+-Fazemos a Isolation Geometry no Flatcam, usando diâmetro da ferramenta de 0.1mm, de 1 a 3 passadas de 200mm/min (2400mm/min rapids). Com 3 passadas os pads podem ficar finos.
+-A placa é pintada de preto com tinta 'Brasjet preto fosco', deixamos que ela seque e então é passada na laminadora a 110°(também funciona sem passar, faça o teste).
+-Laser NUBM08 a 3.79A (estimado 5.5W) queima a placa no ponto focal
+-Limpe as partes queimadas com papel toalha e álcool isopropílico e com um bombril, bem de leve.
+-Etch no percloreto
+

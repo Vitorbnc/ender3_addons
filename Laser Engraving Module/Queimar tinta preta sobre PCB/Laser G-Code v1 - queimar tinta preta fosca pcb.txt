@@ -1,0 +1,48 @@
+Configuração para o LaserWeb 4.0.996
+Testada para gravar placa de fenolite cobreada sobre a bed padrão da Ender 3
+
+-Configure a área da impressora para 220x220mm
+
+-Generator: default
+
+-Start
+
+G21         ; Set units to mm
+G90         ; Absolute positioning
+M107       ;Laser off 
+G1 Z12 F300   ;Move head up before homing
+G28 X Y Z ; Home all
+G1 Z9 F300;Set laser height
+G0 X49 Y28  ;Move to base edge 
+G92 X0 Y0 Z0; Set position zero
+G1 F1200 ; opcionais
+G0 F1200
+
+
+
+-End
+
+M107          ; Switch tool off 
+M84 ; Disable steppers
+
+-Homing
+
+M107 ; tool off
+G28 ; home
+M84 ; disable motors
+
+-Tool ON
+
+M106
+G1 F200
+
+-Tool OFF
+
+M107
+G0 F1200
+
+-Laser Intensity
+
+S
+
+-Tool test duration: 0

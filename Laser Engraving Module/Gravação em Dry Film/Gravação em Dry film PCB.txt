@@ -1,0 +1,23 @@
+Corrente 0.95A com laser NUBM08. Altura 15mm.
+Velocidade 1000mm/min
+Tool diam. no Flatcam: 0.01mm
+Testes feitos com Isaolation Geometry, sem margem, usando filtro de halo
+
+
+------
+Substituições:
+TOOL OFF
+
+Find:
+G0 Z0.0010 F2400.00
+
+Replace:
+G0 Z0.0010 F2400.00 \nM107
+-----
+TOOL ON
+
+Find:
+G1 Z-0.0010 F1000.00
+
+Replace:
+G1 Z-0.0010 F1000.00 \nM106

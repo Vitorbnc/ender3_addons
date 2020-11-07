@@ -1,0 +1,9 @@
+1)Setpoint de Corrente mudado para 3.91A (diodo e driver em curto), checado, tudo ok. Saída Esperada: 5.7W (Usuário DTR do LPF)
+Resistores: 2.7//0.47//1.2
+Fórmula LM338:I = 1.25/R
+
+2)Revertido para anterior para evitar sobreaquecimento (o diodo ficou bem quente após 5min de funcionamento, e o driver também, mesmo com cooler e dissipador)
+Condição do diodo: aparentemente OK
+Corrente medida atualmente: 2.97A (tanto no diodo quanto no driver em curto)
+
+3)Adicionado jumper para ativar ou não a configuração descrita em (1). Porém, a corrente medida com ele foi de 3.79A.

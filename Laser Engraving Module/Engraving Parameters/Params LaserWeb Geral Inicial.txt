@@ -1,0 +1,44 @@
+Configuração para o LaserWeb 4.0.996
+Testada para gravar couro e plásticos.
+Posicionamento manual do foco do laser
+Lembre-se de desativar o "burn white" ao gerar o desenho para usar G0 (enquanto o laser está desligado) e G1 (enquanto ligado)
+
+-Configure a área da impressora para 220x220mm
+
+-Generator: default
+
+-Start
+
+G21         ; Set units to mm
+G90         ; Absolute positioning
+M107       ;Laser off 
+G92 X0 Y0 Z0
+
+
+-End
+
+M107          ; Switch tool off 
+M84 ; Disable steppers
+
+
+-Homing
+;homing não estabelecido
+
+
+-Tool ON
+
+G1 F4200
+M106
+
+-Tool OFF
+
+
+G0 F4200
+M107
+
+
+-Laser Intensity
+
+S
+
+-Tool test duration: 0

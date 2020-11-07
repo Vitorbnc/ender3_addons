@@ -1,0 +1,30 @@
+IMPORTANTE: USE UMA FONTE MONSTRA PARA TESTAR (tipo 10A)
+** Há esquemáticos nesta pasta 
+** Veja a última atualização para ver a ligação mais atual
+
+--- Geral 
+0. COMPRE UM ÓCULOS DE PROTEÇÃO (OD5 OU MAIOR) - Um ótimo óculos (embora não certificado especificamente para laser) é o UVEX Ultra-Spec 2000 lente laranja (S0360)
+1. Pode ser necessário retirar a lente que vem com o diodo de 9mm (NUBM08 no caso). Use uma morsa e aperte bem a saída óptica, depois retire a base com um alicate.
+1. Obs.: Faça o teste com a lente original também (sem retirá-la)
+
+--- Driver
+1.Use um driver de Corrente Constante (CC). Não use fios finos ou muito longos e finos entre a saída do driver e o diodo, ou ele nunca vai receber a corrente máxima programada por causa da queda de tensão nos fios.
+	Observe não só os fios mas também soldas e conectores.
+2.Se os fios estão OK mas você não atingiu a corrente, teste com outra fonte.  Pode ser necessário usa uma fonte de tensão maior ou maior capacidade de corrente.
+3. Não culpe o diodo prematuramente. Na maioria das vezes, estes 3 fatores (driver, fios e fonte) são os vilões.
+4.Estou usando agora um driver "Old School" com LM338 @ 3.12A e fonte monstra 12V de PC
+PWM topíssimo com IRF3205 em série com o negativo do diodo NUBM08, corrente estável, show de bola!
+
+--- Da Ender 3 e similares
+1. Você vai usar os fios do cooler lateral do extrusor, não é necessário retirá-lo, apenas "puxar" os fios (como um "T").
+2. A Ender trabalha com 24V, use uma fonte 12V separada pro laser, até porque ele consumirá bastante.
+3. Use um interruptor para ativar ou não a saída TTL do driver. Use um divisor de tensão com 12K+10K (Vth ~= 10V e Rth ~= 5k) para a saída TTL (O MOSFET funciona bem com 10V, mas se você precisar de 5V TTL, só use um resistor de 4.7K entre GND e o pino de entrada TTL do seu driver). 
+	
+4. Use um interruptor (para alta corrente, ele chaveará o fio negativo driver-diodo) e um resistor de 100 ohms entre seus terminais para selecionar entre o modo "full" e um modo "dim" do laser. Este último servirá para
+	testes e focalizar a luz sem que você fique cego.
+	Obs.: É possível usar PWM para isso, mas este método ainda se mostrou bem útil, até mesmo como medida adicional de segurança.
+
+5. Os comandos do laser em gcode são M106 (ON) e M107 (OFF). Usei inicialmente o software LaserGRBL, mas depois mudei para o LaserWeb.
+	Edite o gcode e adicione G92 X0 Y0 Z0 na primeira linha, antes de tudo, para começar a gravar da posição atual (sem fazer "homing")
+6. Ativar a "Visualização de Translações" permitirá ver o desenho no programa Cura (não necessário com o LaserWeb).
+	

@@ -1,0 +1,83 @@
+Laser Usado:
+NUBM08 a 2.95A - Cerca de 4.3W estimado
+Gravações feitas aproximadamente na distância focal, obtida manualmente, a olho nu, com o modo dim
+
+------------------------------------------------------------------------------------------
+Madeira:
+Testado com Laser GRBL
+x 52
+y 30
+z 14
+
+1000mm/s
+
+G92 X0 Y0 Z0
+-------------------------------------------------------------------------------------------
+PCB:
+Testado com LaserWeb, G-Code v1
+Z 9
+
+1)
+
+Tool ON:
+M106
+G1 F100
+
+Tool OFF:
+M107
+G0 F300
+
+Tempo Gasto:
+Desenho "Shift595" - 49.7x39.3mm
+Laser spot diam. 0.15mm 
+1h40min 
+----------------------------
+
+2)
+
+
+Tool ON:
+M106
+G1 F200
+
+Tool OFF:
+M107
+G0 F1000
+
+Tempo Gasto:
+Desenho "Shift595" - 49.7x39.3mm
+Laser spot diam. 0.15mm 
+51min 
+
+----------------------------------------------------------------------------------
+Plástico/Couro:
+Driver LM338 NUBM08 @3.12A - 4.55W estimado
+Gravações aproximadamente na distância focal (na verdade, um pouquinho mais alto para dar suavidade, dado que o laser já está bem forte)
+
+-Couro legítimo: cerca de 4000, invertida ou não, tudo ok
+
+---- Couro "falso" - plástico
+Desenho  "faith.svg" 
+-Não invertida (queima o fundo, deixa a frente intacta)
+Velocidade: 4200mm/min on e off
+Tempo: 16 min
+-Invertida (queima só a frente)
+Velocidade: 4800
+Tempo: cerca de 10min
+Ficou um pouco 'fino', mas suficientemente visível
+
+
+
+-------------------------------------------------------------------------------
+Couro Legítimo
+Laser NUBM08 @1A com pinhole pra filtrar o halo (tipo um filtro espacial, com a própria lente do laser)
+Altura do eixo z: determinada a olho (talvez 6mm)
+
+Velocidade: 1000mm/min ON e 2400mm/min OFF
+Imagem e texto com LaserWeb
+
+Gravação ficou ótima
+
+
+
+

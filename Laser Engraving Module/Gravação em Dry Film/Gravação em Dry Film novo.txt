@@ -1,0 +1,5 @@
+Laser NUBM08 @1A com pinhole pra filtrar o halo (tipo um filtro espacial, com a própria lente do laser)
+Altura do eixo z: 5 e depois 6mm
+Melhores configurações do LaserGRBL: 
+ -Horizontal 2400mm/min com 10 ou 16 linhas/mm
+ -Diagonal 6000mm/min com 10 ou 15 linhas/mm 
